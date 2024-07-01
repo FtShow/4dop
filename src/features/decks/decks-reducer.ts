@@ -1,7 +1,7 @@
 import { Deck } from './decks-api.ts'
 
 const initialState = {
-  decks: [] as any[], // todo: add type
+  decks: [] as Deck[], //
   // searchParams: {
   //   name: '',
   // },

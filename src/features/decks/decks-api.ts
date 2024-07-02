@@ -10,11 +10,17 @@ export const DecksApi = {
   fetchDecks() {
     return instance.get<FetchDecksResponse>('/v2/decks')
   },
+  createDeck(params: addDeckParams){
+    return instance.post<Deck>('/v1/decks', params)
+  },
 }
 
 export type FetchDecksResponse = {
   items: Deck[]
   pagination: Pagination
+}
+export type addDeckParams = {
+  name: string
 }
 
 export type Deck = {
@@ -38,4 +44,14 @@ export type Pagination = {
   itemsPerPage: number
   totalPages: number
   totalItems: number
+}
+export type createDeckType = {
+	id: string;
+	userId: string;
+	name: string;
+	isPrivate: boolean;
+	cover: string;
+	created: string;
+	updated: string;
+	cardsCount: number;
 }
